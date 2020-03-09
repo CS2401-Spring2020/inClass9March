@@ -11,7 +11,7 @@ public class LiveCoding {
 
     public static void main(String[] args) {
         System.out.println(AminoAcidResources.getAminoAcidFromCodon("AAA"));
-        System.out.println(4%0);
+        System.out.println(4%0);  
     }
 
 }
