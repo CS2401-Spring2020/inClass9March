@@ -3,9 +3,8 @@ Carlos Chavez
 CS2401
 Demo done in class Wednesday, March 11 2020
 Note: Recall that adding a counter functionality was not fully implemented
-by the end of the lab. Currently NameLL is adding every name to the
-end of the list, repeated or not, NOT incrementing the counter.
-Please consider that if you are using this class as a reference for your lab
+by the end of the lab.
+That functionality has been added, hopefully it helps with your lab.
  */
 
 public class NameLL {
@@ -43,7 +42,7 @@ public class NameLL {
         NameLL current = this;
         while(current != null){
             if(current.name.equals(inName)){
-                current.incrementCounter();
+                current.incrementCounter(); // incrementing counter here when name is found in list
                 return;
             }
             if(current.next == null){
