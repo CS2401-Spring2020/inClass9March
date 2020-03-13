@@ -27,18 +27,37 @@ public class NameLL {
     }
 
     // method to add name to linked list
-    public void addName(String name){
+    public void addName(String inName){
+        /*
+        *** RECURSIVE VERSION ***
+        if(name.equals(inName)){
+            incrementCounter();
+        }else{
+            if(next == null){
+                next = new NameLL(inName);
+            }else{
+                next.addName(inName);
+            }
+        }*/
+
         NameLL current = this;
-        while(current.next!=null){
+        while(current != null){
+            if(current.name.equals(inName)){
+                current.incrementCounter();
+                return;
+            }
+            if(current.next == null){
+                current.next = new NameLL(inName);
+                return;
+            }
             current = current.next;
         }
-        current.next = new NameLL(name);
     }
 
     public void printLL(){
         NameLL temp = this;
         while(temp!=null){
-            System.out.println("name: " + temp.name + " counter: " + this.counter);
+            System.out.println("name: " + temp.name + " counter: " + temp.counter);
             temp = temp.next;
         }
     }
@@ -54,13 +73,15 @@ public class NameLL {
     }
 
     // method to create linked list after receiving an array of strings
-    public NameLL fromNamesArray(String [] names){
+    public static NameLL fromNamesArray(String [] names){
         if(names.length == 0){
             return null;
         }
         NameLL list = new NameLL(names[0]);
         for(int i = 1; i < names.length; i++){
-            addName(names[i]);
+            //list.printLL();
+            //System.out.println();
+            list.addName(names[i]);
         }
         return list;
     }

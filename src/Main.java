@@ -11,10 +11,9 @@ Please consider that if you are using this class as a reference for your lab
 public class Main {
     public static void main(String[] args){
 
-        String [] names = {"Carlos", "Alex", "Isaac","Carlos", "Daniela", "Dan"};
+        String [] names = {"Carlos", "Alex", "Isaac","Carlos", "Daniela", "Dan", "Dan"};
 
-        NameLL list = new NameLL(names[0]);
-        list.fromNamesArray(names);
+        NameLL list = NameLL.fromNamesArray(names);
 
         list.printLL();
         System.out.println();
